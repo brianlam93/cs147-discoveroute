@@ -7,18 +7,36 @@
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
 <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.css' rel='stylesheet' />
 <link href='css/bootstrap.css' rel='stylesheet' />
+<link href='css/bootstrap.min.css' rel='stylesheet' />
+<link href='css/style.css' rel='stylesheet' />
 
-<style>
-  body { margin:0; padding:0; }
-  #map { position:absolute; top:50px; bottom:0; width:100%; }
-  .map-search {position: absolute; top:0; bottom: 0; width: 100%;};
-</style>
 </head>
 <body>
-    <div id="container">
-        <form class="navbar-form navbar-left map-search" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+    <nav class="navbar nav-slide" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img src="images/discoveroute.png" class="logo" /></a>
+
+          <a class="navbar-brand" href="#"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button></a>
+          <form class="navbar-form navbar-left map-search" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="find your destination!">
+            </div>
+            <button type="submit" class="btn btn-default">Go!</button>
+            </form>
+        </div>
+      </div>
+    </nav>
+
+    <div id="container-fluid">
+        <div class="map-search">
+        </div>
+        <div>
+            <img src="images/sidebar.png" / class="sidebar">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
         <a href="savedroutes.html"> Saved Routes</a>
@@ -26,16 +44,29 @@
         <div id='map'></div>
     </div>
 
+<script src='js/jquery.js'></script>
 <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.1/mapbox.js'></script>
-  <script>
+<script src='js/bootstrap.js'></script>
+<script src='js/bootstrap.min.js'></script>
+
+<script>
 var geocoder = L.mapbox.geocoder('examples.map-vyofok3q'),
     map = L.mapbox.map('map', 'examples.map-vyofok3q')
 
 geocoder.query('Stanford, CA', showMap);
+$('.sidebar').toggle();
 
 function showMap(err, data) {
      map.fitBounds(data.lbounds);
 }
+
+function showSidebar(e) {
+    e.preventDefault();
+    $('.sidebar').toggle();
+};
+
+$('.logo').click(showSidebar);
+
 </script>
 
 
