@@ -1,0 +1,28 @@
+body { 
+	margin:0; 
+	padding:0; 
+	background: #1F2931;
+}
+
+#map { 
+	position:absolute; top:10%; bottom: 0px; width:100%; z-index: -1
+}
+
+.logo{
+	width: 200px;
+}
+
+.sidebar{
+	width: 100px;
+	position: absolute;
+	left: 0px;
+}
+
+.nav-slide{
+	color: #1F2931;
+}
+
+.logo:hover{
+	background-color: #000;
+}
+
