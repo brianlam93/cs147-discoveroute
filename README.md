@@ -5,4 +5,3 @@ Discoveroute offers its users the ability to find places of interest along famil
 
 This repository is a first iteration. 
 Check out the [final product here](http://discoveroute.com), and the [source code here](https://github.com/hwray/Discoveroute).
-https://github.com/hwray/discoveroute
